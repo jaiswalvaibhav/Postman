@@ -584,7 +584,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8084/api/v1/kafka/publish/string?message=hello",
+							"raw": "http://localhost:8084/api/v1/kafka/publish/string?message=hello kafka",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -600,7 +600,7 @@
 							"query": [
 								{
 									"key": "message",
-									"value": "hello"
+									"value": "hello kafka"
 								}
 							]
 						}
