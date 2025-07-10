@@ -632,7 +632,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"key\": \"test-key\",\n    \"message\": \"Hello Kafka\"\n}",
+							"raw": "{\n    \"key\": \"test-key\",\n    \"message\": \"Hello Kafka Application\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
