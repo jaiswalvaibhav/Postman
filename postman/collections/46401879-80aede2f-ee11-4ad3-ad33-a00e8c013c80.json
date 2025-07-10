@@ -583,17 +583,8 @@
 						},
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"firstName\": \"Vaibhav\",\n    \"lastName\": \"Jaiswal\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:8084/api/v1/kafka/publish/json",
+							"raw": "http://localhost:8084/api/v1/kafka/publish/string?message=hello",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -604,7 +595,13 @@
 								"v1",
 								"kafka",
 								"publish",
-								"json"
+								"string"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "hello"
+								}
 							]
 						}
 					},
