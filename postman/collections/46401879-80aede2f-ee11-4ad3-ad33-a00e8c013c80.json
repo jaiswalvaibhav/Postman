@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "46401879-80aede2f-ee11-4ad3-ad33-a00e8c013c80",
+		"name": "SpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SecurityApplication",
+			"item": [
+				{
+					"name": "students",
+					"id": "46401879-5f52771b-1833-481c-9b0b-7f51c7a62106",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "students",
+					"id": "46401879-8331d3e3-c284-4b7a-a762-3253409bf2d2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"firstName\":\"Pradeep\",\n    \"lastName\":\"Mittal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "46401879-fe884903-3d5b-4994-868a-834deb22b04c"
+		},
+		{
+			"name": "AnnotationsApplication",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "46401879-8b127867-5119-48db-bde3-8b98c755ed36",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"firstName\":\"Pradeep\",\n    \"lastName\":\"Mittal\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book Using Path Variable",
+					"id": "46401879-c9a6d3b0-864d-451f-8670-1a9c6f0dbbff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/books/4/Ramayan/The Tale of Ram",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"4",
+								"Ramayan",
+								"The Tale of Ram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book Using Request Params",
+					"id": "46401879-fe9e00e9-6bd5-4fce-a815-9242bfa72bea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/books/query?id=4&title=Ramayan&detail=The Tale of Ram",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"query"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "title",
+									"value": "Ramayan"
+								},
+								{
+									"key": "detail",
+									"value": "The Tale of Ram"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book using ResponseEntity",
+					"id": "46401879-d62e030c-c7dc-4779-adae-4c57e2b10f5c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":2,\n    \"title\":\"Advance Java\",\n    \"description\":\"Learn JSP, Servlet, Spring, SpringBoot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/books/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"id": "46401879-8a4a4b05-253b-401c-958f-8125e94bb5e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Advance Java\",\n    \"description\":\"Learn JSP, Servlet, Spring, SpringBoot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/books/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"id": "46401879-1f10ae9d-1925-46a6-9a63-4dafcf68b136",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/books/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"id": "46401879-55e47b49-155b-46ec-90af-9f3a49694de5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":2,\n    \"title\":\"Advance Java\",\n    \"description\":\"Learn JSP, Servlet, Spring, SpringBoot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "46401879-8d39354b-9e63-4972-a30d-f10e110c7a81"
+		},
+		{
+			"name": "EMS-Backend",
+			"item": [
+				{
+					"name": "Create Employee",
+					"id": "46401879-9fcc4f01-2b05-4445-9391-c0c507cabbf2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Tony\",\n    \"lastName\":\"Stark\",\n    \"email\":\"stark@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/employees/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"employees",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"id": "46401879-431d9dc8-84b1-40de-9e25-fdbd985eb4d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/employees/get?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"employees",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employees",
+					"id": "46401879-7b27e6c0-1332-49f9-b96c-ac91a4001884",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/employees/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"employees",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"id": "46401879-55c45175-e74f-470a-af17-7c332bf51908",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"firstName\": \"Tom\",\n        \"lastName\": \"Cruise\",\n        \"email\": \"tom@gmail.com\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/employees/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"employees",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employees By Id",
+					"id": "46401879-c0ef3d44-d1ad-4823-97e7-acfdf9e5af0b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/employees/delete/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"employees",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "46401879-cde541ce-c2f2-4ac3-a1ba-b84c40c24a94"
+		},
+		{
+			"name": "Kafka",
+			"item": [
+				{
+					"name": "Publish Json",
+					"id": "46401879-142212d4-33e4-4fb7-aba0-97dd990dd7b7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"firstName\": \"Vaibhav\",\n    \"lastName\": \"Jaiswal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/v1/kafka/publish/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"kafka",
+								"publish",
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish String",
+					"id": "46401879-c1e2b240-3d7d-450b-a99b-5511281cded9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"firstName\": \"Vaibhav\",\n    \"lastName\": \"Jaiswal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/v1/kafka/publish/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"kafka",
+								"publish",
+								"json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "46401879-84c07e43-aed5-400b-83d4-ae618a88ce99"
+		},
+		{
+			"name": "MultiMessage Kafka",
+			"item": [
+				{
+					"name": "MultiMessage - String",
+					"id": "46401879-7d40cf6d-61e9-4249-8abf-cf1c12f7e1e1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"test-key\",\n    \"message\": \"Hello Kafka\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/kafka/publish/string",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"kafka",
+								"publish",
+								"string"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/kafka/publish/string \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"key\": \"test-key\", \"message\": \"Hello World\"}'"
+					},
+					"response": []
+				},
+				{
+					"name": "MultiMessage - Json",
+					"id": "46401879-65c4fdfa-f304-48ad-a735-9014f1ebdc3f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"test-key\",\n    \"data\": {\n        \"name\": \"Jhonny\",\n        \"age\": 20,\n        \"city\": \"New Jersey\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/kafka/publish/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"kafka",
+								"publish",
+								"json"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/kafka/publish/json \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"key\": \"test-key\", \"data\": {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve String",
+					"id": "46401879-d420d215-60a8-444e-bfcf-e29498dfc153",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/kafka/messages/string",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"kafka",
+								"messages",
+								"string"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Json",
+					"id": "46401879-1b893da2-2c0d-4753-ba4b-c9b0d71a7864",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/kafka/messages/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"kafka",
+								"messages",
+								"json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "46401879-8692e859-fa3b-4f0f-a925-3cd8ac0e1949"
+		}
+	]
+}
