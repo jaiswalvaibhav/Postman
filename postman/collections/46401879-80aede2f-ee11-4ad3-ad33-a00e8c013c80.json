@@ -749,36 +749,6 @@
 				}
 			],
 			"id": "46401879-8692e859-fa3b-4f0f-a925-3cd8ac0e1949"
-		},
-		{
-			"name": "Get Specific User",
-			"id": "46401879-c68142e0-5e53-462c-8d37-f59490bdb97a",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/v1/users/1",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"v1",
-						"users",
-						"1"
-					]
-				},
-				"description": "Generated from cURL: curl http://127.0.0.1:5000/api/v1/users/1"
-			},
-			"response": []
 		}
 	]
 }
